@@ -20,6 +20,8 @@ var Blog = (function(oldBlog){
 		console.log("dataArray", dataArray);
 		// console.log("Blog Entry", dataArray[0].entry);
 		Blog.writeToDom(dataArray);
+		Blog.listens();
+		Blog.deleteButton();
 	}
 
 	return oldBlog;

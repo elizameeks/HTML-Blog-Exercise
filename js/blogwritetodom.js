@@ -6,10 +6,12 @@ var Blog = (function(oldBlog){
 		for (var i = 0; i < blogData.length; i++){
 			// blogData[i].author; blogData[i].date; blogData[i].entry; blogData[i].keywords; blogData[i].title;
 			blogString += 
-					`<article class="container white z-depth-5">
+				`<div class="delete">
+					<article class="container white z-depth-5">
 						<div class="row">
-							<header class="col s12">
+							<header class="col s12" style="position: relative;">
 								<h2 class="center-align pink lighten-4 z-depth-2">${blogData[i].title}</h2>
+								<a class="waves-effect waves-light btn pink delete-btn" style="position: relative; margin: -115px 0 0 5px; padding: 5px;"><i class="material-icons">delete</i></a>
 							</header>
 						</div>
 						<div class="row">
@@ -29,7 +31,8 @@ var Blog = (function(oldBlog){
 								</div>
 							</div>
 						</footer>
-					</article>`;
+					</article>
+				</div>`;
 		}
 		write.innerHTML = blogString;
 	}
