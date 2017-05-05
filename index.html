@@ -14,36 +14,91 @@
 </head>
 <body class="grey lighten-1">
 
-<!-- pink, pink darken-3, pink lighten-4, yellow, black, grey darken-1, grey lighten-1 -->
-<!-- 	<nav>
-		<div class="nav-wrapper pink">
-			<h2 class="flow-text">Eliza Meeks</h2>
-			<h3>
-		</div>
-	</nav> -->
 	<header class="pink">
-		<!-- <div class="container"> -->
 			<div class="row valign-wrapper">
 				<div class="col s10 offset-s1">
 					<h1 class="white-text center-align">Eliza W Meeks</h1>
 					<p class="white-text center-align">Software Developer</p>
 				</div>
 				<div class="col s1">
-					<a class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons pink-text">add</i></a>
+					<!-- Positioning the button relative and then absolutely in the next two styles allows me to keep the Fixed Action Button inside the div instead of in the bottom right corner. -->
+					<div style="position: relative; margin-top: 100px;">
+						<div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute;">
+						    <a class="btn-floating btn-large yellow">
+						      <i class="material-icons black-text">add</i>
+						    </a>
+						    <ul>
+						      <li><a class="btn-floating yellow lighten-2" id="blogList"><i class="material-icons grey-text text-darken-3">view_list</i></a></li>
+						      <li><a class="btn-floating yellow lighten-1" id="addBlog"><i class="material-icons grey-text text-darken-4">playlist_add</i></a></li>
+						    </ul>
+						</div>
+					</div>
 				</div>
-			</div>
-		<!-- </div> -->
-	</header>
 
+			</div>
+	</header>
+	<!-- Bio image -->
 	<main>
-		<div class="container white z-depth-5">
+		<div class="container grey lighten-1">
 			<div class="row valign-wrapper">
 				<div class="col s2 offset-s5">
-					<img src="img/profile-pic.jpg" class="circle responsive-img" alt="Image of Eliza W Meeks">
+					<img src="img/profile-pic.jpg" class="circle responsive-img z-depth-2 " alt="Image of Eliza W Meeks">
 				</div>
 			</div>
+		</div>
+		<!-- Add Blog View -->
+		<!-- title, date, author, blog entry and keywords -->
+		<div id="addBlogView" class="container white hidden">
+			<div class="row">
+			    <div class="col s12">
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">account_circle</i>
+			          <input id="icon_prefix" type="text" class="validate">
+			          <label for="icon_prefix">Author</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">today</i>
+			          <input id="icon_telephone" type="tel" class="validate">
+			          <label for="icon_telephone">Date</label>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+			    <div class="input-field col s12">
+			        <i class="material-icons prefix">toc</i>
+			        <input id="icon_prefix" type="text" class="validate">
+			        <label for="icon_prefix">Title</label>
+			     </div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+						<div class="input-field col s12">
+							<textarea id="textarea1" class="materialize-textarea"></textarea>
+							<label for="textarea1">Textarea</label>
+						</div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+			    <div class="input-field col s12">
+			        <i class="material-icons prefix">vpn_key</i>
+			        <input id="icon_prefix" type="text" class="validate">
+			        <label for="icon_prefix">Keywords</label>
+			     </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5">
+					<a class="waves-effect waves-light btn yellow black-text">Submit</a>
+				</div>
+			</div>
+		</div>
 
-			<article>
+		<!-- Blog List View -->
+		<div id="blogListView">
+			<article class="container white z-depth-5">
 				<div class="row">
 					<header class="col s12">
 						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #4</h2>
@@ -72,10 +127,8 @@
 					</div>
 				</footer>
 			</article>
-		</div>
 
-		<div class="container white z-depth-5">
-			<article>
+			<article class="container white z-depth-5">
 				<div class="row">
 					<header class="col s12">
 						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #2</h2>
@@ -105,11 +158,8 @@
 					</div>
 				</footer>
 			</article>
-		</div>
 
-
-		<div class="container white z-depth-5">
-			<article>
+			<article class="container white z-depth-5">
 				<div class="row">
 					<header class="col s12">
 						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #1</h2>
@@ -140,10 +190,7 @@
 				</footer>
 			</article>
 
-		</div>
-
-		<div class="container white z-depth-5">
-			<article>
+			<article class="container white z-depth-5">
 				<div class="row">
 					<header class="col s12">
 						<h2 class="center-align pink lighten-4 z-depth-2">Title</h2>
@@ -170,10 +217,7 @@
 				</footer>
 			</article>
 
-		</div>
-
-		<div class="container white z-depth-5">
-			<article>
+			<article class="container white z-depth-5">
 				<div class="row">
 					<header class="col s12">
 						<h2 class="center-align pink lighten-4 z-depth-2">Title</h2>
@@ -198,11 +242,8 @@
 						</div>
 					</div>
 				</footer>
-			</article>
-
+			</article>	
 		</div>
-
-		
 	</main>
 
 	<footer>
@@ -213,7 +254,10 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="bower_components/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/bloglisteners.js"></script>
+	<script type="text/javascript" src="js/blogspa.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
