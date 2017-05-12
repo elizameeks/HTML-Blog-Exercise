@@ -11,11 +11,13 @@ var Blog = (function(oldBlog){
 
 	oldBlog.parseAjax = function(data){
 		console.log("data", data);
-		for (node in data){
-			for (node2 in node){
-				dataArray.push(data[node][node2]);
-				
-			}
+		console.log("dataentry", data.blog[0]);
+		var objArray = Object.keys(data.blog);
+		console.log("objArray", objArray);
+		var objLength = objArray.length;
+		console.log("objLength", objLength);
+		for (var i = 0; i < objLength; i++){
+			dataArray.push(data.blog[i]);
 		}
 		console.log("dataArray", dataArray);
 		// console.log("Blog Entry", dataArray[0].entry);
