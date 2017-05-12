@@ -14,195 +14,92 @@
 </head>
 <body class="grey lighten-1">
 
-<!-- pink, pink darken-3, pink lighten-4, yellow, black, grey darken-1, grey lighten-1 -->
-<!-- 	<nav>
-		<div class="nav-wrapper pink">
-			<h2 class="flow-text">Eliza Meeks</h2>
-			<h3>
-		</div>
-	</nav> -->
 	<header class="pink">
-		<!-- <div class="container"> -->
 			<div class="row valign-wrapper">
 				<div class="col s10 offset-s1">
 					<h1 class="white-text center-align">Eliza W Meeks</h1>
 					<p class="white-text center-align">Software Developer</p>
 				</div>
 				<div class="col s1">
-					<a class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons pink-text">add</i></a>
+					<!-- Positioning the button relative and then absolutely in the next two styles allows me to keep the Fixed Action Button inside the div instead of in the bottom right corner. -->
+					<div style="position: relative; margin-top: 100px;">
+						<div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute;">
+						    <a class="btn-floating btn-large yellow">
+						      <i class="material-icons black-text">add</i>
+						    </a>
+						    <ul>
+						      <li><a class="btn-floating yellow lighten-2" id="blogList"><i class="material-icons grey-text text-darken-3">view_list</i></a></li>
+						      <li><a class="btn-floating yellow lighten-1" id="addBlog"><i class="material-icons grey-text text-darken-4">playlist_add</i></a></li>
+						    </ul>
+						</div>
+					</div>
 				</div>
-			</div>
-		<!-- </div> -->
-	</header>
 
+			</div>
+	</header>
+	<!-- Bio image -->
 	<main>
-		<div class="container white z-depth-5">
+		<div class="container grey lighten-1">
 			<div class="row valign-wrapper">
 				<div class="col s2 offset-s5">
-					<img src="img/profile-pic.jpg" class="circle responsive-img" alt="Image of Eliza W Meeks">
+					<img src="img/profile-pic.jpg" class="circle responsive-img z-depth-2 " alt="Image of Eliza W Meeks">
 				</div>
 			</div>
-
-			<article>
-				<div class="row">
-					<header class="col s12">
-						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #4</h2>
-					</header>
-				</div>
-
-				<div class="row">
-					<section class="col s10 offset-s1">
-						<p>I missed blogging week #3 because I spent the second half of Friday volunteering with Comcast Cares Day and Operation Standup to help beautiful some of the homes that Operation Stand Up has for homeless veterans. I kind of had it in the back of my mind that I was going to blog week three this week, but I blinked and it was Friday again.</p>
-						<p>Week three we continued with Javascript Event Listeners, array methods, and introduced Bootstrap and Materialize. I've played around some with Materialize and am beginning to see it's strengths and limitations. It's pretty and it makes things very easy to style. I think I still need more experience with making it work, so I'll continue playing with it.</p>
-						<p>This week we covered IIFEs (modularizing javascript) XHR requests (requesting data from large data files), and had a group project where we built a translator. My group project went well, and teammate Adam and I almost cracked importing a translator API to supplement our lexicons. I'm learning a lot about working together as a team with different coding styles and personalities.</p>
-						<p>I got a little behind where I want to be mentally with exercises this week because I got a terrible cold, so I'm hoping I can spend the lab day today getting back where I want to be.</p>
-					</section>
-				</div>
-
-				<footer>
-					<div class="row">
-						<div class="col s6 offset-s3 center-align">
-							<h3>Eliza W Meeks</h3>
+		</div>
+		<!-- Add Blog View -->
+		<!-- title, date, author, blog entry and keywords -->
+		<div id="addBlogView" class="container white hidden">
+			<div class="row">
+			    <div class="col s12">
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">account_circle</i>
+			          <input id="icon_prefix" type="text" class="validate">
+			          <label for="icon_prefix">Author</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">today</i>
+			          <input id="icon_telephone" type="tel" class="validate">
+			          <label for="icon_telephone">Date</label>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+			    <div class="input-field col s12">
+			        <i class="material-icons prefix">toc</i>
+			        <input id="icon_prefix" type="text" class="validate">
+			        <label for="icon_prefix">Title</label>
+			     </div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+						<div class="input-field col s12">
+							<textarea id="textarea1" class="materialize-textarea"></textarea>
+							<label for="textarea1">Textarea</label>
 						</div>
-					</div>
-					<div class="row yellow">
-						<div class="col s2 offset-s5 center-align">
-						<p>April 28, 2017</p>
-						</div>
-					</div>
-				</footer>
-			</article>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col s12">
+			    <div class="input-field col s12">
+			        <i class="material-icons prefix">vpn_key</i>
+			        <input id="icon_prefix" type="text" class="validate">
+			        <label for="icon_prefix">Keywords</label>
+			     </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5">
+					<a class="waves-effect waves-light btn yellow black-text">Submit</a>
+				</div>
+			</div>
 		</div>
 
-		<div class="container white z-depth-5">
-			<article>
-				<div class="row">
-					<header class="col s12">
-						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #2</h2>
-					</header>
-				</div>
-
-				<div class="row">
-					<section class="col s10 offset-s1">
-						<p>We really started hitting Javascript this week. I struggled with it some, primarily because I hadn't caught up on the exercises. But Thursday evening I decided to really hit the Javascript exercises hard and I'm feeling more confident this morning. I was able to figure out the Javascript for the group project, which makes me feel like I'm really starting to get the hang of it. More practice is definitely needed, but I'm feeling more solid now.</p>
-						
-						<p>The second half of this week also featured our first group projects, and then first group project part two. We had to do it twice. It was a website for a fake client where we populated the products page using Javascript. I was initially group lead and my first group project came together really well, and with Madeline as the styling expert it really looked beautiful. Our biggest challenge was (surprise), the Javascript. Our Javascript functioned, but it didn't loop and wasn't DRY. I had been thinking to myself if I were to do it again that I'd start with the Javascript. I guess this was fortunate because the cohort struggled enough that they decided we needed to do it again, so I got a chance to do it. Project One Part Two features much more beautiful Javascript and less beautiful styling (Madeline is not in my second group), so we're getting six of one half a dozen of another.</p>
-						
-						<p>I was able to finish all of the exercises for the first milestone. I'm pleased because I lowkey want to be the first person to finish all the exercises.</p>
-					</section>
-				</div>
-
-				<footer>
-					<div class="row">
-						<div class="col s6 offset-s3 center-align">
-							<h3>Eliza W Meeks</h3>
-						</div>
-					</div>
-					<div class="row yellow">
-						<div class="col s2 offset-s5 center-align">
-						<p>April 14, 2017</p>
-						</div>
-					</div>
-				</footer>
-			</article>
+		<!-- Blog List View -->
+		<div id="blogListView">
+				
 		</div>
-
-
-		<div class="container white z-depth-5">
-			<article>
-				<div class="row">
-					<header class="col s12">
-						<h2 class="center-align pink lighten-4 z-depth-2">NSS Bootcamp Week #1</h2>
-					</header>
-				</div>
-
-				<div class="row">
-					<section class="col s10 offset-s1">
-						<p>Thus began the journey at Nashville Software school: an orientation day, followed immediately by the presentation of the capstone projects of Cohort 18 (the cohort immediately preceding ours), then intro to HTML, CSS, and JavaScript.</p>
-						<p>So far the HTML, CSS, and Javascript that has been covered is all right from the pre work, so I'm feeling fairly confident about it. Doing the exercises has proved validating in terms of proving that I know this stuff and can do it with relative ease. Using the terminal was a little surprising the first day--I hadn't gotten that far in the prework--but I seem to have gotten the hang of it. It's really cool to see past the GUI and into what's actually going on in the computer.</p>
-						<p>One of the aspects that I had been totally unfamiliar with is using git and gitHub, but I think I'm getting the hang of the one-way street and the process. After we had downloaded git, Twitter Friend Smingleigh told me to never use git push master force. I joked about using git push master jedi, but now a few days later I actually understand what git push master force is and why I shouldn't use it.</p>
-						<p>Cohort 18 presented the capstone projects from their first three months, giving us an idea of what we might be able to make at the end of twelve weeks. It's gotten me brainstorming what app I want to make. I came up with a couple of ideas: an app that curates color palettes using hex code and common HTML names for easy color palettes that you don't have to use a color picker to find the colors. I'm particularly interested in the idea of doing it with color names to increase accessibility for color blind individuals.</p>
-						<p>The other idea I came up with (which is, frankly, what I'm more likely to do) is an app for tracking FPIES triggers, reactions, and all of the other fun things concomitant with FPIES. I'm thinking of making an app where you can login, and create profiles for each child with FPIES. You can then make a list of triggers, a list of safe foods, track trials, reactions, or any medical information or ER notes. I think it could be useful in keeping track of everything you might need to track with FPIES. The goal would ultimately be a mobile app. I need to make a Trello to start listing ideas. I figure if I've got an eye on what I want to make, I can keep track of the types of coding and procedures I need to use to make it happen.</p>
-					</section>
-				</div>
-
-				<footer>
-					<div class="row">
-						<div class="col s6 offset-s3 center-align">
-							<h3>Eliza W Meeks</h3>
-						</div>
-					</div>
-					<div class="row yellow">
-						<div class="col s2 offset-s5 center-align">
-						<p>April 7, 2017</p>
-						</div>
-					</div>
-				</footer>
-			</article>
-
-		</div>
-
-		<div class="container white z-depth-5">
-			<article>
-				<div class="row">
-					<header class="col s12">
-						<h2 class="center-align pink lighten-4 z-depth-2">Title</h2>
-					</header>
-				</div>
-
-				<div class="row">
-					<section class="col s10 offset-s1">
-						Lorem ipsum dolor sit amet, magni maecenas arcu felis lacus, sit vestibulum adipiscing eu felis maecenas, iaculis elementum ac et semper, ante dictum consectetuer viverra. Mi mi maxime neque turpis posuere, cursus ante urna etiam, sit aenean sed, lectus ac ut pede, pretium nisl auctor nullam. Diam elit ut convallis, mauris et aliquam semper pulvinar lacus, tortor commodo at adipiscing neque in, et quis et nullam dolor. Sit sed id, felis donec mauris integer sed ridiculus tellus, nonummy interdum proin pellentesque lorem. Suscipit adipiscing posuere tincidunt sunt id, dapibus metus, at auctor eros in, ut nulla arcu aliquam amet pharetra. Risus semper morbi gravida et pellentesque. Nunc faucibus, imperdiet felis, tincidunt sit hac vestibulum vivamus sed, mollis sed venenatis amet fames, dignissim mauris leo ut. Ipsum vel officia platea, turpis et augue arcu, ut vivamus arcu sem, tincidunt dictum risus dictum, ut massa orci integer proin leo. Ornare ut wisi mi et magna, arcu risus diam massa condimentum, eu risus magnis magna cum eu. Eu congue augue tellus suspendisse, vitae vulputate elementum est neque, eget aliquam, nullam lorem donec ut porta duis.
-					</section>
-				</div>
-
-				<footer>
-					<div class="row">
-						<div class="col s6 offset-s3 center-align">
-							<h3>Authora McArthor</h3>
-						</div>
-					</div>
-					<div class="row yellow">
-						<div class="col s2 offset-s5 center-align">
-						<p>Date</p>
-						</div>
-					</div>
-				</footer>
-			</article>
-
-		</div>
-
-		<div class="container white z-depth-5">
-			<article>
-				<div class="row">
-					<header class="col s12">
-						<h2 class="center-align pink lighten-4 z-depth-2">Title</h2>
-					</header>
-				</div>
-
-				<div class="row">
-					<section class="col s10 offset-s1">
-						Lorem ipsum dolor sit amet, magni maecenas arcu felis lacus, sit vestibulum adipiscing eu felis maecenas, iaculis elementum ac et semper, ante dictum consectetuer viverra. Mi mi maxime neque turpis posuere, cursus ante urna etiam, sit aenean sed, lectus ac ut pede, pretium nisl auctor nullam. Diam elit ut convallis, mauris et aliquam semper pulvinar lacus, tortor commodo at adipiscing neque in, et quis et nullam dolor. Sit sed id, felis donec mauris integer sed ridiculus tellus, nonummy interdum proin pellentesque lorem. Suscipit adipiscing posuere tincidunt sunt id, dapibus metus, at auctor eros in, ut nulla arcu aliquam amet pharetra. Risus semper morbi gravida et pellentesque. Nunc faucibus, imperdiet felis, tincidunt sit hac vestibulum vivamus sed, mollis sed venenatis amet fames, dignissim mauris leo ut. Ipsum vel officia platea, turpis et augue arcu, ut vivamus arcu sem, tincidunt dictum risus dictum, ut massa orci integer proin leo. Ornare ut wisi mi et magna, arcu risus diam massa condimentum, eu risus magnis magna cum eu. Eu congue augue tellus suspendisse, vitae vulputate elementum est neque, eget aliquam, nullam lorem donec ut porta duis.
-					</section>
-				</div>
-
-				<footer>
-					<div class="row">
-						<div class="col s6 offset-s3 center-align">
-							<h3>Authora McArthor</h3>
-						</div>
-					</div>
-					<div class="row yellow">
-						<div class="col s2 offset-s5 center-align">
-						<p>Date</p>
-						</div>
-					</div>
-				</footer>
-			</article>
-
-		</div>
-
-		
 	</main>
 
 	<footer>
@@ -213,7 +110,12 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="bower_components/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/bloglisteners.js"></script>
+	<script type="text/javascript" src="js/blogspa.js"></script>
+	<script type="text/javascript" src="js/blogwritetodom.js"></script>
+	<script type="text/javascript" src="js/blogajax.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
